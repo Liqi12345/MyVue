@@ -5,12 +5,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'common/less/config.less'
+import Public from 'common/index'
 import http from './api/index'
+import Filter from '@/config/filter'
 import store from './store'
 import forDevelopment from './plugin/forDevelopment'
 
 Vue.config.productionTip = false
 Vue.use(http)
+Vue.use(Public)
+Vue.use(Filter)
 // 开发调试配置
 if (process.env.NODE_ENV === 'development') {
   Vue.use(forDevelopment)
